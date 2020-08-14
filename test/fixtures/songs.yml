@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  preview: MyString
+  duration: 1
+  album: MyString
+  release_date: 2020-08-14
+
+two:
+  title: MyString
+  preview: MyString
+  duration: 1
+  album: MyString
+  release_date: 2020-08-14
