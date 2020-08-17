@@ -35,3 +35,4 @@ module MusicAppApi
     config.api_only = true
   end
 end
+
