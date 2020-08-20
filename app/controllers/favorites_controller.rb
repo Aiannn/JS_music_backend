@@ -5,8 +5,8 @@ class FavoritesController < ApplicationController
     end 
 
     def show
-        favorite = Favorite.find_by(params[:id])
-        render json: favorite
+        @favorite = Favorite.find_by(id: params[:id])
+        render json: @favorite, include: [:song]
     end 
 
     def create

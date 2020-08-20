@@ -5,7 +5,7 @@ class SongsController < ApplicationController
         render json: @songs 
     end
 
-    def show
+    def show #its for artists top5 songs
         @song = Song.find_by(id: params[:id])
         url = "https://api.deezer.com/artist/#{params[:id]}/top?limit=5"
         response = HTTParty.get(url)
@@ -13,18 +13,14 @@ class SongsController < ApplicationController
         render json: response.parsed_response
     end
 
-    def new 
-    end 
-
-    def create
-        # @song = Song.create(s_params)
-        # render json: @song 
-        #http://localhost:3000/song/new 
+    def showed #its for specific song (really messed up)
+        @song = Song.find_by(id: params[:id])
+        render json: @song 
     end
 
-    private
-
-    def s_params
-        params.require(:song).permit(:title, :preview, :duration, :album, :release_date)
+    def destroy
+        Song.destroy(params[:id])
     end
+
+
 end
